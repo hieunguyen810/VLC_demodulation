@@ -1,1 +1,6 @@
-
+numpy==1.19.5
+streamlit==0.75.0
+pandas==0.24.2
+~atplotlib==3.1.1
+matplotlib==3.3.4
+scikit_learn==0.24.1
