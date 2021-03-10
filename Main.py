@@ -20,23 +20,27 @@ def main(X, y, std, func):
     print("--- %s seconds ---" % (time.time() - start_time))
     return score
 if __name__ == '__main__':
-    distance = st.sidebar.selectbox("Choose a distance (cm)", ("10", "20", "30"))
-    bit_rate = st.sidebar.selectbox("Choose an bit rate (kbps)", ("200", "250", "300"))
+    #distance = st.sidebar.selectbox("Choose a distance (cm)", ("10", "20", "30"))
+    #bit_rate = st.sidebar.selectbox("Choose an bit rate (Kbps)", ("200", "250", "300"))
+    mode = st.sidebar.selectbox("Choose a preprocessing mode: ", ("normal", "related_bit"))
+    bit_rate = st.slider("Choose an bit rate (Kbps): ", min_value = 50, max_value= 400, value= 100, step=50)
     model_type = st.sidebar.selectbox("Choose an model", ("PNN", "GRNN"))
     if model_type == "PNN":
         st.title('PNN model')
     else: 
         st.title('GRNN model')
     std = st.slider("Choose a standard deviation: ", min_value = 0.01, max_value= 1.0, value= 0.01, step=0.01)
-    func = st.selectbox("Choose an activation function", ("1", "2", "3"))
+    func = 1
+    # func = st.selectbox("Choose an activation function", ("1", "2", "3"))
     distance = 20
-    bit_rate = 250
-    X, y = Get_data.get_data(distance, bit_rate)
-    X_temp = X.reshape(-1)
+    #bit_rate = 250
+    X1, X2, y = Get_data.get_data(distance, bit_rate, mode)
+    X_temp = X1.reshape(-1)
     y_temp = np.kron(y, [1, 1, 1, 1, 1])
     df = np.vstack([X_temp, y_temp])
     df = np.transpose(df)
     df = pd.DataFrame(df, columns = ['Transmitted signal', 'Received signal'])
     st.line_chart(df[:200])
-    score = main(X, y, std, func) 
+    score = main(X2, y, std, func) 
     st.write("Accuracy: ", score)
+    st.write("BER: ", 1 - score)
