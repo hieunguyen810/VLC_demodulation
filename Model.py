@@ -8,27 +8,14 @@ import matplotlib.pyplot as plt
 import random
 from numpy.core.umath_tests import inner1d
 class PNN:
-    def __init__(self, x_train, y_train, x_test, y_test, std, func):
+    def __init__(self, x_train, y_train, x_test, y_test, std):
         self.x_train = x_train
         self.y_train = y_train
         self.x_test = x_test
         self.y_test = y_test
         self.std = std
-        self.func = func
     def activation_func(self, distances, my_class): #kernel
-        if self.func == 1:
-            kernel = np.exp((-distances)/(self.std**2))   # for dot product
-        elif self.func == 2:
-            kernel = (np.sin(distances/3)/(distances/2))**10
-        else: 
-            kernel = np.exp((-distances)/(2*self.std**2)) #for euclidean distances   
-        #kernel = np.exp((-distances**2) / 2*(self.std**2)) # for manhattan distances #gaussian kernel
-        #kernel = np.exp((-distances)/(2*self.std**2)) #for euclidean distances 
-
-        #kernel = np.exp((-1/2)*distances)
-        #kernel = 1/(1 + distances**2)
-        #kernel = (np.sin(distances/3)/(distances/2))**10
-        #kernel = 1 - distances
+        kernel = np.exp((-distances)/(self.std**2))   # for dot product
         return np.sum(kernel)
     def output(self,my_class, i):
         #distances = np.abs(self.x_test[i]-my_class) # manhattan distance  
