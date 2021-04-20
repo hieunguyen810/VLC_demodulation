@@ -6,11 +6,15 @@ from sklearn import metrics
 import time
 import Model
 import Get_data
-def main(X, y, std, func):
+def main(X, y, std, model_type):
     start_time = time.time()
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=2)
-    model = Model.PNN(X_train, y_train, X_test, y_test, std, func)
-    y_predicted = model.predict()
+    if model_type == "PNN":
+        model = Model.PNN(X_train, y_train, X_test, y_test, std)
+        y_predicted = model.predict()
+    else:
+        model = Model.GRNN(X_train, y_train, X_test, y_test, std)
+        y_predicted = model.predict()
     score = metrics.accuracy_score(y_test, y_predicted)
     print("Accuracy: ", score)
     ber = 1 - score
@@ -30,8 +34,6 @@ if __name__ == '__main__':
     else: 
         st.title('GRNN model')
     std = st.slider("Choose a standard deviation: ", min_value = 0.01, max_value= 1.0, value= 0.01, step=0.01)
-    func = 1
-    # func = st.selectbox("Choose an activation function", ("1", "2", "3"))
     distance = 20
     #bit_rate = 250
     X1, X2, y = Get_data.get_data(distance, bit_rate, mode)
@@ -41,6 +43,6 @@ if __name__ == '__main__':
     df = np.transpose(df)
     df = pd.DataFrame(df, columns = ['Transmitted signal', 'Received signal'])
     st.line_chart(df[:200])
-    score = main(X2, y, std, func) 
+    score = main(X2, y, std, model_type) 
     st.write("Accuracy: ", score)
     st.write("BER: ", 1 - score)
