@@ -15,6 +15,7 @@ def main(X, y, std, model_type):
     else:
         model = Model.GRNN(X_train, y_train, X_test, y_test, std)
         y_predicted = model.predict()
+        y_predicted = y_predicted.astype(int)
     score = metrics.accuracy_score(y_test, y_predicted)
     print("Accuracy: ", score)
     ber = 1 - score
