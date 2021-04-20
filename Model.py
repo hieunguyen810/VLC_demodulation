@@ -51,12 +51,12 @@ class PNN:
             predict_array = np.append(predict_array, c)
         return predict_array
 class GRNN:
-    def __init__(self,x_train,y_train,x_test,y_test):
+    def __init__(self,x_train,y_train,x_test,y_test, std):
         self.x_train= x_train
         self.y_train= y_train
         self.x_test= x_test
         self.y_test= y_test
-        self.std = np.full((1, self.y_train.size), 3)
+        self.std = np.full((1, self.y_train.size), std)
         # self.std = np.ones((1,self.y_train.size))#np.random.rand(1,self.train_y.size) #Standard deviations(std) are sometimes called RBF widths.
     def activation_func(self, distances): # gaussian kernel       
         kernel = np.exp(- (distances) / 2*(self.std**2))
