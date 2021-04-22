@@ -34,7 +34,7 @@ if __name__ == '__main__':
         st.title('PNN model')
     else: 
         st.title('GRNN model')
-    std = st.slider("Choose a standard deviation: ", min_value = 0.01, max_value= 5.0, value= 0.01, step=0.01)
+    std = st.slider("Choose a standard deviation: ", min_value = 0.01, max_value= 1.0, value= 0.01, step=0.01)
     distance = 20
     #bit_rate = 250
     X1, X2, y = Get_data.get_data(distance, bit_rate, mode)
