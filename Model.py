@@ -7,10 +7,6 @@ import math
 import matplotlib.pyplot as plt
 import random
 from numpy.core.umath_tests import inner1d
-def sigmoid(x):  
-    z = np.exp(-x)
-    sig = 1 / (1 + z)
-    return sig
 class PNN:
     def __init__(self, x_train, y_train, x_test, y_test, std):
         self.x_train = x_train
@@ -20,7 +16,7 @@ class PNN:
         self.std = std
     def activation_func(self, distances, my_class): #kernel
         kernel = np.exp((-distances)/(self.std**2))   # for dot product
-        kernel = sigmoid(kernel)
+        kernel = 1/kenel
         return np.sum(kernel)
     def output(self,my_class, i):
         #distances = np.abs(self.x_test[i]-my_class) # manhattan distance  
