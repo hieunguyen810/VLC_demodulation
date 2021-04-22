@@ -8,8 +8,14 @@ import matplotlib.pyplot as plt
 import random
 from numpy.core.umath_tests import inner1d
 def sigmoid(x):
-    sig = 1 / (1 + math.exp(-x))
-    return sig
+    if x >= 0:
+        z = math.exp(-x)
+        sig = 1 / (1 + z)
+        return sig
+    else:
+        z = math.exp(x)
+        sig = z / (1 + z)
+        return sig
 class PNN:
     def __init__(self, x_train, y_train, x_test, y_test, std):
         self.x_train = x_train
