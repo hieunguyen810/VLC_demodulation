@@ -19,7 +19,7 @@ class PNN:
         self.std = std
     def activation_func(self, distances, my_class): #kernel
         kernel = np.exp((-distances)/(self.std**2))   # for dot product
-        kernel = softmax(kernel)
+        #kernel = softmax(kernel)
         return np.sum(kernel)
     def output(self,my_class, i):
         #distances = np.abs(self.x_test[i]-my_class) # manhattan distance  
