@@ -25,7 +25,7 @@ def main(X, y, std, model_type):
     print("--- %s seconds ---" % (time.time() - start_time))
     return score
 if __name__ == '__main__':
-    mode = st.sidebar.selectbox("Choose a preprocessing mode: ", ("normal", "related_bit"))
+    mode = st.sidebar.selectbox("Choose a preprocessing mode: ", ("normal", "Framing", "Continuous wavelet transform", "Denoising autoencoder"))
     bit_rate = st.slider("Choose an bit rate (Kbps): ", min_value = 50, max_value= 400, value= 100, step=50)
     model_type = st.sidebar.selectbox("Choose an model", ("PNN", "GRNN"))
     if model_type == "PNN":
