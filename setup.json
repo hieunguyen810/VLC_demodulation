@@ -1,0 +1,6 @@
+{
+    "bitrate": 100,
+    "distance": 20,  
+    "preprocessing": "Framing",
+    "enableCWT": true 
+}
