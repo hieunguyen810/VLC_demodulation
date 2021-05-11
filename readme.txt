@@ -3,7 +3,12 @@ Author: Nguyen Tri Hieu
 Github: hieunguyen810
 Email: hieu.nguyennth123@hcmut.edu.vn
 Report can be found at: "............."
-
+----------------------------------------------------------------------
+### GENERAL USAGE NOTES ###
+- Dataset for this program was measure on OVLC System.
+- Input data: 2-level Lorentz pulse
+- At each bitrate, we measure 40 times (250 bits per times)
+-----------------------------------------------------------------------
 ### HOW TO RUN THIS PROGRAM #####
 - Define at setup.json
     + Bitrate: from 10 to 400 kbps (missing at some bitrate)
