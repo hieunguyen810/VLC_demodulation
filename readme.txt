@@ -10,7 +10,7 @@ Report can be found at: "............."
 - Input data: 2-level Lorentz pulse
 - At each bitrate, we measure 40 times (250 bits per times)
 - For PNN and GRNN, we have a default std at each scenerio, you can adjust it to get the higher performance. 
-
+----------------------------------------------------------------------
 ### HOW TO RUN THIS PROGRAM #####
 - Define at setup.json
     + Bitrate: from 10 to 400 kbps (missing at some bitrate)
@@ -18,5 +18,8 @@ Report can be found at: "............."
     + Preprocessing: Framing or DAE (denoising autoencoder)
     + enableCWT: true or false (cwt: Continuous wavelet transform)
     + Model: one of three model: Probabilistic neural networks, General regression neural networks, deep tensor neuarl networks (you can add new model at Model.py).
-- run file "run.py"
+- run file "Main.py"
+-----------------------------------------------------------------------
+### This program can be run online at: https://share.streamlit.io/hieunguyen810/web-app-vlc-system/main/Main.py
+
 
