@@ -17,5 +17,6 @@ Report can be found at: "............."
     + Distance: from 10 to 40 cm (only use at 100kbps and 200kbps)
     + Preprocessing: Framing or DAE (denoising autoencoder)
     + enableCWT: true or false (cwt: Continuous wavelet transform)
+    + Model: one of three model: Probabilistic neural networks, General regression neural networks, deep tensor neuarl networks (you can add new model at Model.py).
 - run file "run.py"
 
