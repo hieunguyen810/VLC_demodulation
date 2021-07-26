@@ -1,0 +1,7 @@
+{
+    "bitrate": 100,
+    "distance": 10,  
+    "preprocessing": "Framing",
+    "enableCWT": "true",
+    "model": "DTNN"
+}
