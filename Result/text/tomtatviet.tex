@@ -1,0 +1,7 @@
+Trong luận văn này bao gồm hai phần chính là đo đạc tại phòng thí nghiệm 209B1 (Hcmut) và xây dựng những mô hình học máy khác nhau để giải điều chế tín hiệu. Dữ liệu từ việc đo đạc tín hiệu 2 mức xung Lorentz trên hệ thống truyền thông bằng ánh sáng khả kiến dùng \ac{oled} được sử dụng làm tập dữ liệu cho mô hình máy học. Luận văn này sẽ trình chi tiết các quá trình từ đo đạt dữ liệu,  xử lý tín hiệu đến phân loại tín hiệu.
+
+Các bước xử lý tín hiệu sẽ khảo sát bao gồm: giảm méo dạng phi tuyến bằng Denoising Autoencoder Neural Networks. Dữ liệu để huấn luyện là tín hiệu 2 mức ngẫu nhiên được cộng thêm nhiễu Gaussian. Mục tiêu của mô hình là học được những đặc tính của tín hiệu 2 mức, để có thể hiệu chỉnh lại tín hiệu bị méo dạng khi đi qua kênh truyền \ac{vlc}. Cách thứ 2 được khảo sát là trích xuất tín hiệu thành từng frame, mỗi frame sẽ bao gồm bit cần phân loại cùng với hai bits liền trước và hai bits liền sau nó. Ngoài ra, do tín hiệu thu được là nonstationary, nên một kỹ thuật phân tín tín hiệu trong cả miền thời gian và tần số là \ac{cwt} cũng được sử dụng.
+
+Để có thể phân loại tín hiệu với 2 mức khác nhau, chúng tôi sẽ sử dụng 3 phương pháp là \ac{pnn}, \ac{grnn} và \ac{dtnn}, sau đó sẽ so sánh 3 phương pháp với nhau và với phương pháp thông thường là bộ giải điều chế dùng ngưỡng.
+
+Mục tiêu của luận văn này là đi tìm phương pháp tiền xử lý cũng như phân loại tín hiệu tốt nhất để có thể làm giảm \ac{ber} xuống mức dưới ngưỡng cho phép trong hệ thống \ac{vlc} là 3.8e - 3, với tốc độ bit và khoảng cách cao nhất có thể. 

@@ -1,0 +1,7 @@
+In this thesis, the two main parts are: measuring at laboratory 209B1 (Hcmut) and building different machine learning models for signal demodulation. Data from the measurement of two Lorentz pulses signals on visible light communication systems using \ac{oled} use as datasets for the machine learning model. This thesis will detail the processes from data acquisition, signal processing to signal classification. 
+
+The signal processing steps to be investigated include: reducing nonlinear distortion with Denoising Autoencoder Neural Networks. The data to train is a 2-level randomized pulse with added Gaussian noise. The goal of the model is to learn the characteristics of a two-level pulse to correct the distorted signal when passing through the \ac {vlc} channel. The second way to be investigated is to extract the signal into frames. Each frame contains the classified bit along with the two preceding and two bits following it. In addition, since the received signal is nonstationary, a time domain and frequency domain \ac{cwt} technique is also used. 
+
+To be able to classify signals with two different levels, we will use three methods: \ac{pnn}, \ac{grnn} and \ac{dtnn}, then compare the three methods with each other and with the demodulator using a threshold. 
+
+The goal of this thesis is to find the best method of preprocessing as well as classifying signals that can reduce \ac{ber} to a level below the allowable threshold in the \ ac {vlc} system of 3.8e - 3, with the highest possible bit rate and distance. 
