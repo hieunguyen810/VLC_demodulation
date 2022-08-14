@@ -20,6 +20,5 @@ Report can be found at: "............."
     + Model: one of three model: Probabilistic neural networks, General regression neural networks, deep tensor neuarl networks (you can add new model at Model.py).
 - run file "Main.py"
 -----------------------------------------------------------------------
-### This program can be run online at: https://share.streamlit.io/hieunguyen810/web-app-vlc-system/main/Main.py
 
 
