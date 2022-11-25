@@ -23,10 +23,8 @@ Email: hieu.nguyennth123@hcmut.edu.vn
 - run file "Main.py"
 ## Abstract
 In this thesis, the two main parts are: measuring at laboratory 209B1 (Hcmut) and
-building different machine learning models for signal demodulation. Data from the mea-
-surement of two Lorentz pulses signals on visible light communication systems using
-OLED use as datasets for the machine learning model. This thesis will detail the pro-
-cesses from data acquisition, signal processing to signal classification.
+building different machine learning models for signal demodulation. Data from the measurement of two Lorentz pulses signals on visible light communication systems using
+OLED use as datasets for the machine learning model. This thesis will detail the processes from data acquisition, signal processing to signal classification.
 <br />
 The signal processing steps to be investigated include: reducing nonlinear distortion
 with Denoising Autoencoder Neural Networks. The data to train is a two-level randomized
