@@ -4,7 +4,7 @@ Author: Nguyen Tri Hieu
 <br />
 Github: hieunguyen810
 <br />
-Email: hieu.nguyennth123@hcmut.edu.vn
+Email: trihieu08101999@gmail.com.vn
 
 ----------------------------------------------------------------------
 ## GENERAL USAGE NOTES 
